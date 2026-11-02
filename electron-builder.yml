@@ -1,0 +1,39 @@
+appId: com.coverartstudio.app
+productName: CoverArt Studio
+directories:
+  buildResources: resources
+  output: release
+files:
+  - out/**/*
+  - package.json
+asarUnpack:
+  - '**/node_modules/ffmpeg-static/**'
+win:
+  icon: resources/icon.ico
+  target:
+    - target: portable
+      arch:
+        - x64
+    - target: nsis
+      arch:
+        - x64
+fileAssociations:
+  - ext: coverart
+    name: CoverArt-Projekt
+    description: CoverArt Studio Projekt
+    icon: resources/icon.ico
+    role: Editor
+portable:
+  artifactName: '${productName}-${version}-portable.${ext}'
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  include: resources/installer.nsh
+  artifactName: '${productName}-${version}-setup.${ext}'
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  category: public.app-category.graphics-design
