@@ -18,7 +18,6 @@ npm run preview:web  # preview the build locally
 
 `dist-web/` is fully static (relative paths) and can be hosted in any subfolder.
 Deployment runs through GitHub Actions: `.github/workflows/pages.yml` (repo → Settings → Pages → Source: *GitHub Actions*).
-If this folder is not the repository root, move the workflow to the root and adjust `working-directory` / `path`.
 
 Differences from the desktop version: saving and exporting happen as browser downloads, and images/projects are opened
 through the file picker. MP4/WebM are encoded directly in the browser using WebCodecs (requires a current Chrome, Edge,
